@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindPulse</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.tailwindcss.com">
+    // Enable dark mode via class strategy
+    tailwind.config = {
+      darkMode: "class"
+    }
+  </script>
+
+</head>
+<body class="bg-white text-gray-900 transition-colors duration-300">
+  <!-- Header / Navbar -->
+  <header class="flex justify-between items-center px-4 md:px-8 py-4 shadow-md bg-white dark:bg-gray-600 transition-colors duration-300 fixed w-full top-0 left-0 z-50">
+    <!-- Logo -->
+    <h1 class="text-xl md:text-2xl font-bold text-indigo-600 dark:text-indigo-400 transition-transform duration-500 hover:scale-110">
+      MindPulse
+    </h1>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex space-x-8 text-gray-700 dark:text-gray-200 font-medium">
+      <a href="#features" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Features</a>
+      <a href="#testimonials" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Testimonials</a>
+      <a href="#pricing" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Pricing</a>
+      <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Contact</a>
+    </nav>
+
+    <!-- Right Section -->
+    <div class="flex items-center space-x-4">
+      <!-- Theme Toggle -->
+      <button id="themeToggle" 
+        class="px-3 py-1 border rounded-md text-sm 
+               bg-gray-100 dark:bg-gray-800 
+               text-gray-800 dark:text-gray-200 
+               hover:bg-gray-200 dark:hover:bg-gray-700 
+               transition">
+        #127769 Dark
+
+
+      </button>
+
+      <!-- CTA (Desktop Only) -->
+      <a href="#started" class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition">
+        Get Started
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl text-indigo-600 dark:text-indigo-400 focus:outline-none transition-transform duration-300">
+        &#9776;
+      </button>
+    </div>
+  </header>
+  <!-- Mobile Menu -->
+  <nav id="mobileMenu" class="fixed top-[64px] right-4 w-56 max-h-0 overflow-hidden transition-all duration-300 ease-in-out flex-col bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 md:hidden rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-40">
+    <a href="#features" class="block px-4 py-2 border-b border-gray-200 dark:border-gray-700 hover:bg-indigo-50 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400">Features</a>
+    <a href="#testimonials" class="block px-4 py-2 border-b border-gray-200 dark:border-gray-700 hover:bg-indigo-50 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400">Testimonials</a>
+    <a href="#pricing" class="block px-4 py-2 border-b border-gray-200 dark:border-gray-700 hover:bg-indigo-50 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400">Pricing</a>
+    <a href="#contact" class="block px-4 py-2 border-b border-gray-200 dark:border-gray-700 hover:bg-indigo-50 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a>
+    <a href="#started" class="block px-4 py-2 hover:bg-indigo-50 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400">Get Started</a>
+  </nav>
+   
+   <!-- Hero Section -->
+  <section id="hero" class="relative bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-900 dark:to-gray-800 pt-24 pb-16 px-6 ">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between">
+
+      <!-- Text Content -->
+      <div class="md:w-1/2 text-center md:text-left space-y-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900 dark:text-white">
+          Understand Your Team <br class="hidden md:block"> Beyond the Screen
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg mx-auto md:mx-0">
+          MindPulse uses <span class="font-semibold text-indigo-600 dark:text-indigo-400">webcam cues</span> 
+          or <span class="font-semibold text-indigo-600 dark:text-indigo-400">emoji feedback</span> 
+          to power your team’s <strong>mood dashboard</strong>.  
+          See if your team is stressed, happy, or burnt out and let AI auto-suggest breaks & team-building activities.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="#pricing" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition">
+            Boost Your Team’s Happiness
+          </a>
+          <a href="#features" class="border border-indigo-600 text-indigo-600 dark:text-indigo-400 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 dark:hover:bg-gray-700 transition">
+            See Features
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Illustration -->
+      <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center relative">
+        <div class="bg-white dark:bg-indigo-600 shadow-2xl rounded-2xl p-6 w-full max-w-md transform hover:scale-105 transition duration-500">
+          <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Mood Dashboard</h3>
+
+          <!-- Fake Dashboard -->
+          <div class="grid grid-cols-3 gap-4 mb-6">
+            <div class="bg-green-100 dark:bg-green-800 rounded-lg p-4 text-center">
+              &#128522; <p class="text-sm font-medium mt-2">Happy</p> 
+            </div>
+            <div class="bg-yellow-100 dark:bg-yellow-800 rounded-lg p-4 text-center">
+              &#128528; <p class="text-sm font-medium mt-2">Neutral</p> 
+            </div>
+            <div class="bg-red-100 dark:bg-red-800 rounded-lg p-4 text-center">
+              &#128555; <p class="text-sm font-medium mt-2">Stressed</p> 
+            </div>
+          </div>
+
+          <div class="bg-indigo-100 dark:bg-indigo-900 p-4 rounded-lg text-center">
+            <p class="text-indigo-700 dark:text-indigo-300 font-semibold">Team Happiness Score: 82%</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">AI Suggestion: Take a short break &#9749;</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="px-6 py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto text-center mb-14">
+      <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">
+        Powerful Features to Keep Your Team Thriving
+      </h3>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        MindPulse helps you understand emotions, track well-being, and build stronger remote teams all in real time.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <!-- Feature 1 -->
+      <div class="p-8 shadow-lg rounded-2xl bg-white dark:bg-gray-200 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+        <div class="text-5xl mb-4">&#128249;</div> 
+        <h4 class="text-xl font-semibold mb-3 text-indigo-600 dark:text-indigo-400">Real-time Emotion Tracking</h4>
+        <p class="text-black-900 dark:text-black-300">
+          Track stress, happiness, and burnout instantly using <strong>webcam cues</strong> or <strong>emoji feedback</strong>.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="p-8 shadow-lg rounded-2xl bg-white dark:bg-gray-200 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+        <div class="text-5xl mb-4">&#128202;</div> 
+        <h4 class="text-xl font-semibold mb-3 text-purple-600 dark:text-purple-400">Team Happiness Score</h4>
+        <p class="text-black-900 dark:text-black-300">
+          Get a live, easy-to-read <strong>mood dashboard</strong> that shows your team’s overall emotional health.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="p-8 shadow-lg rounded-2xl bg-white dark:bg-gray-200 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+        <div class="text-5xl mb-4">&#128161;</div> 
+        <h4 class="text-xl font-semibold mb-3 text-yellow-600 dark:text-yellow-400">Automatic Well-Being Nudges</h4>
+        <p class="text-black-900 dark:text-black-300">
+          Let AI suggest <strong>breaks, team-building, or relaxation</strong> when stress levels are rising.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="relative py-24 bg-gradient-to-b from-white to-indigo-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200"">
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+      <!-- Heading -->
+      <h3 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 dark:text-gray-100" data-aos="fade-up">
+        Loved by Remote Teams Worldwide
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        MindPulse powers happier, more resilient teams. Here’s what leaders across industries are saying.
+      </p>
+
+      <!-- Testimonials Grid -->
+      <div class="grid md:grid-cols-3 gap-10">
+        <!-- Testimonial 1 -->
+        <div class="p-8 bg-white dark:bg-gray-800 shadow-xl rounded-2xl border border-gray-100 dark:border-gray-700 transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <p class="text-lg text-gray-700 dark:text-gray-300 italic leading-relaxed">
+            &ldquo;MindPulse is our early-warning system for burnout. Engagement went up and stress went down within weeks.&rdquo;
+          </p>
+          <div class="mt-6 flex items-center gap-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="w-12 h-12 rounded-full border-2 border-indigo-500">
+            <div class="text-left">
+              <h5 class="font-semibold text-gray-900 dark:text-gray-100">Sarah Thompson</h5>
+              <p class="text-sm text-gray-500 dark:text-gray-400">HR Director, CloudSync</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="p-8 bg-white dark:bg-gray-800 shadow-xl rounded-2xl border border-gray-100 dark:border-gray-700 transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-delay="300">
+          <p class="text-lg text-gray-700 dark:text-gray-300 italic leading-relaxed">
+            &ldquo;The Happiness Score is a KPI for us now. It gave leaders a clear picture of morale in real time.&rdquo;
+          </p>
+          <div class="mt-6 flex items-center gap-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex" class="w-12 h-12 rounded-full border-2 border-indigo-500">
+            <div class="text-left">
+              <h5 class="font-semibold text-gray-900 dark:text-gray-100">Alex Rivera</h5>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Team Lead, NovaTech</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="p-8 bg-white dark:bg-gray-800 shadow-xl rounded-2xl border border-gray-100 dark:border-gray-700 transform hover:scale-105 transition duration-300" data-aos="fade-up" data-aos-delay="400">
+          <p class="text-lg text-gray-700 dark:text-gray-300 italic leading-relaxed">
+            &ldquo;The AI nudges transformed how our managers handle team wellness. Productivity feels sustainable now.&rdquo;
+          </p>
+          <div class="mt-6 flex items-center gap-4">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily" class="w-12 h-12 rounded-full border-2 border-indigo-500">
+            <div class="text-left">
+              <h5 class="font-semibold text-gray-900 dark:text-gray-100">Emily Zhang</h5>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Project Manager, FlowWorks</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted by Leading Teams -->
+    <section id="trusted" class="px-6 py-16 bg-gray-50 dark:bg-gray-950 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200"">
+      <!-- Background Blur Effect -->
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-indigo-400 opacity-20 rounded-full blur-3xl"></div>
+
+      <h3 class="text-3xl font-bold text-center mb-12 dark:text-white">Trusted by Leading Teams</h3>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
+        <!-- Fictional Logos -->
+        <div class="group p-6 rounded-lg bg-white dark:bg-gray-800 shadow hover:shadow-xl transition">
+          <span class="text-4xl block mb-3 dark:text-white">&starf;</span>
+          <h4 class="font-semibold dark:text-white">NovaSync</h4>
+          <p class="text-sm text-gray-500 dark:text-white">AI Collaboration Tools</p>
+        </div>
+      
+        <div class="group p-6 rounded-lg bg-white dark:bg-gray-800 shadow hover:shadow-xl transition">
+          <span class="text-4xl block mb-3">&#128187;</span>
+          <h4 class="font-semibold dark:text-white">CloudZenith</h4>
+          <p class="text-sm text-gray-500 dark:text-white">Cloud Solutions</p>
+        </div>
+      
+        <div class="group p-6 rounded-lg bg-white dark:bg-gray-800 shadow hover:shadow-xl transition">
+          <span class="text-4xl block mb-3">&#128736;</span>
+          <h4 class="font-semibold dark:text-white">PulseWorks</h4>
+          <p class="text-sm text-gray-500 dark:text-white">Productivity Systems</p>
+        </div>
+      
+        <div class="group p-6 rounded-lg bg-white dark:bg-gray-800 shadow hover:shadow-xl transition">
+          <span class="text-4xl block mb-3 dark:text-white">&#128640;</span>
+          <h4 class="font-semibold dark:text-white">OrbitHive</h4>
+          <p class="text-sm text-gray-500 dark:text-white">Innovation Lab</p>
+        </div>
+      </div>
+    
+      <!-- Call-to-Action -->
+      <div class="text-center mt-12">
+        <button 
+          id="customerStoriesBtn" 
+          class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-md transition transform hover:scale-105">
+          Read Customer Stories
+        </button>
+      </div>
+    
+      <!-- Hidden Customer Stories -->
+      <div id="customerStories" class="hidden mt-10 max-w-3xl mx-auto space-y-6 ">
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+          <p class="text-gray-700 dark:text-gray-300 italic">"NovaSync’s remote teams reduced burnout by 30% after adopting MindPulse."</p>
+          <h5 class="mt-3 font-semibold dark:text-white">— Emma, Operations Director</h5>
+        </div>
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+          <p class="text-gray-700 dark:text-gray-300 italic">"PulseWorks saw measurable boosts in team morale within weeks."</p>
+          <h5 class="mt-3 font-semibold dark:text-white">— David, Engineering Lead</h5>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- Pricing -->
+    <section id="pricing" class="px-6 py-20 bg-gray-50 dark:bg-gray-950 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200"">
+      <h3 class="text-3xl font-bold text-center mb-12 dark:text-white">Simple, Transparent Pricing</h3>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+        <!-- Starter -->
+        <div class="pricing-card p-8 border rounded-2xl shadow bg-white dark:bg-gray-800 transition transform hover:scale-105 bg-white dark:bg-gray-800">
+          <h4 class="text-xl font-bold mb-4 dark:text-white">Starter</h4>
+          <p class="text-3xl font-bold mb-4 dark:text-white">Free</p>
+          <p class="text-gray-600 dark:text-white mb-6">Perfect for small teams exploring well-being tools.</p>
+          <ul class="text-sm text-gray-600 dark:text-white space-y-2 mb-6 text-left">
+            <li>&#10004; Up to 5 members</li>
+            <hr class="border-gray-300 dark:border-white mb-4">
+            <li>&#10004; Real-time emotion tracking</li>
+            <hr class="border-gray-300 dark:border-white mb-4">
+            <li>&#10006; Advanced analytics</li>
+          </ul>
+          <button class="w-full py-3 bg-indigo-600 text-white rounded-lg font-medium shadow hover:bg-indigo-700 transition">
+            Get Started
+          </button>
+        </div>
+
+        <!-- Pro -->
+        <div class="pricing-card relative p-10 border-2 border-indigo-600 rounded-2xl shadow-lg bg-indigo-50 dark:bg-indigo-900 transition transform hover:scale-105 cursor-pointer">
+          <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+            Most Popular
+          </span>
+          <h4 class="text-xl font-semibold mb-2 dark:text-white">Pro</h4>
+          <p class="text-3xl font-bold mb-4 dark:text-white">$19/mo</p>
+          <p class="text-gray-700 dark:text-white mb-6">Great for growing teams that want deeper insights.</p>
+          <ul class="text-sm text-gray-700 dark:text-white space-y-2 mb-6 text-left">
+            <li>&#10004; Up to 25 members</li>
+            <hr class="border-gray-300 dark:border-white mb-4">
+            <li>&#10004; Team happiness dashboard</li>
+            <hr class="border-gray-300 dark:border-white mb-4">
+            <li>&#10004; Automatic well-being nudges</li>
+          </ul>
+          <button class="w-full py-3 bg-indigo-600 text-white rounded-lg font-medium shadow hover:bg-indigo-700 transition">
+            Buy Pro
+          </button>
+        </div>
+
+        <!-- Business -->
+        <div class="pricing-card p-8 border rounded-2xl shadow bg-white dark:bg-white-800 dark:bg-gray-800 transition transform hover:scale-105 bg-white dark:bg-gray-800">
+          <h4 class="text-xl font-bold mb-4 dark:text-white">Business</h4>
+          <p class="text-3xl font-bold mb-4 dark:text-white">49/mo</p>
+          <p class="text-gray-600 dark:text-white mb-6">For enterprises focused on culture and scale.</p>
+          <ul class="text-sm text-gray-600 dark:text-white space-y-2 mb-6 text-left">
+            <li>&#10004; Unlimited members</li>
+            <hr class="border-gray-300 dark:border-white mb-4">
+            <li>&#10004; Dedicated success manager</li>
+            <hr class="border-gray-300 dark:border-white mb-4">
+            <li>&#10004; Custom integrations</li>
+          </ul>
+          <button class="w-full py-3 bg-indigo-600 text-white rounded-lg font-medium shadow hover:bg-indigo-700 transition">
+            Buy Business
+          </button>
+        </div>
+
+      </div>
+    
+      <!-- Trust Badge -->
+      <div class="text-center mt-12 text-gray-500 dark:text-gray-400 text-sm">
+        <p>&#128274; Secure payments · &#128100; Cancel anytime · &#128179; 7-day money-back guarantee</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="started" class="w-full text-center px-6 py-20 bg-indigo-600 dark:bg-indigo-700 text-white data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200"">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-4xl font-extrabold mb-4">Ready to Transform Your Remote Team?</h3>
+        <p class="text-lg text-indigo-100 dark:text-indigo-200 mb-8">
+          Boost happiness, track emotions, and keep your team stress-free with MindPulse’s real-time mood dashboard.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#pricing" 
+             class="inline-block bg-white text-indigo-700 px-8 py-4 rounded-lg font-semibold shadow-md 
+                    hover:bg-gray-100 hover:scale-105 transform transition duration-300">
+            &#128640; Get Started Free
+          </a>
+          <a href="#features" 
+             class="inline-block border border-white text-white px-8 py-4 rounded-lg font-semibold shadow-md 
+                    hover:bg-white hover:text-indigo-700 hover:scale-105 transform transition duration-300">
+            &#128065; View Demo
+          </a>
+        </div>
+      
+        <p class="mt-6 text-sm text-indigo-200 dark:text-indigo-300">No credit card required · Free for up to 5 members</p>
+      </div>
+    </section>
+
+   <!-- Footer -->
+   <footer class="py-12 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
+     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+
+       <!-- About & Contact -->
+       <div id="contact">
+         <h5 class="font-bold text-gray-900 dark:text-white mb-4 text-lg">MindPulse</h5>
+         <p class="text-sm">Empowering teams worldwide with emotional intelligence, insights, and actionable analytics.</p><br>
+         <p class="font-bold text-gray-900 dark:text-white mb-4">Contact</p>
+         <p>Email: support@mindpulse.com</p>
+         <p>Phone: +92 234 567 890</p>
+       </div>
+
+       <!-- Quick Links -->
+       <div>
+         <h5 class="font-bold text-gray-900 dark:text-white mb-4 text-lg">Quick Links</h5>
+         <ul class="space-y-2 text-sm">
+           <li><a href="#features" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Features</a></li>
+           <li><a href="#pricing" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Pricing</a></li>
+           <li><a href="#testimonials" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Testimonials</a></li>
+           <li><a href="#trusted" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Trusted By</a></li>
+           <li><a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Contact</a></li>
+         </ul>
+       </div>
+
+       <!-- Resources / Legal -->
+       <div>
+         <h5 class="font-bold text-gray-900 dark:text-white mb-4 text-lg">Resources & Legal</h5>
+         <ul class="space-y-2 text-sm">
+           <li><a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Blog</a></li>
+           <li><a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Help Center</a></li>
+           <li><a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Privacy Policy</a></li>
+           <li><a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Terms of Service</a></li>
+         </ul>
+       </div>
+
+       <!-- Newsletter Signup -->
+       <div>
+         <h5 class="font-bold text-gray-900 dark:text-white mb-4 text-lg">Stay Updated</h5>
+         <p class="text-sm mb-4">Subscribe to get the latest updates and insights from MindPulse.</p>
+         <form class="flex flex-col sm:flex-row gap-2">
+           <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white">
+           <button type="submit" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md transition">Subscribe</button>
+         </form>
+       </div>
+
+     </div>
+
+     <div class="mt-8 border-t border-gray-300 dark:border-gray-700 pt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+       All rights reserved. &#169; 2025 MindPulse | <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Privacy Policy</a> | <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Terms of Service</a>
+     </div>
+   </footer>
+
+
+   <script>
+      // Select all sections and their children except hero
+      document.querySelectorAll('section:not(#hero), .feature-card, .testimonial').forEach((el, index) => {
+        el.setAttribute('data-aos', 'fade-up');        
+        el.setAttribute('data-aos-duration', '1000');  
+        el.setAttribute('data-aos-delay', index * 500); 
+      });
+
+      // Re-initialize AOS after dynamic changes
+      AOS.refresh();
+
+
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+       // Pricing card selection effect
+      const cards = document.querySelectorAll(".pricing-card");
+      cards.forEach(card => {
+        card.addEventListener("click", () => {
+          cards.forEach(c => c.classList.remove("border-indigo-600", "shadow-lg"));
+          card.classList.add("border-indigo-600", "shadow-lg");
+        });
+      });
+      // enable Tailwind class dark-mode if using CDN
+      if (window.tailwind) tailwind.config = { darkMode: 'class' };
+
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+
+      // Initialize based on existing class (optional)
+      if (html.classList.contains('dark')) {
+        themeToggle.innerHTML = '&#9728; Light';
+      } else {
+        themeToggle.innerHTML = '&#127769; Dark'; 
+      }
+    
+      themeToggle.addEventListener('click', () => {
+        const isDark = html.classList.toggle('dark');
+        if (isDark) {
+          themeToggle.innerHTML = '&#9728; Light'; 
+        } else {
+          themeToggle.innerHTML = '&#127769; Dark'; 
+        }
+      });
+    
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+    
+      menuBtn.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("max-h-0")) {
+          mobileMenu.classList.remove("max-h-0");
+          mobileMenu.classList.add("max-h-screen");
+          menuBtn.innerHTML = "&#10005;"; 
+        } else {
+          mobileMenu.classList.add("max-h-0");
+          mobileMenu.classList.remove("max-h-screen");
+          menuBtn.innerHTML = "&#9776;"; 
+        }
+      });
+    
+      // Toggle Customer Stories
+      document.getElementById("customerStoriesBtn").addEventListener("click", function() {
+        const stories = document.getElementById("customerStories");
+        stories.classList.toggle("hidden");
+        this.textContent = stories.classList.contains("hidden") 
+          ? "Read Customer Stories" 
+          : "Hide Stories";
+      });
+    </script>
+  </body>
+</html>
